@@ -10,7 +10,6 @@
 
 # Windows
 Thumbs.db
-*.db
 
 # Source for the following rules: https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
 # Byte-compiled / optimized / DLL files
@@ -124,4 +123,3 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-people.db

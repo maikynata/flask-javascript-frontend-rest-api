@@ -19,9 +19,9 @@ components:
         lname:
           type: "string"
   parameters:
-    lname:
-      name: "lname"
-      description: "Last name of the person to get"
+    person_id:
+      name: "person_id"
+      description: "ID of the person to get"
       in: path
       required: True
       schema:
@@ -32,7 +32,7 @@ components:
       in: path
       required: true
       schema:
-        type: "integer"
+        type: "string"
 
 paths:
   /people:
@@ -60,14 +60,14 @@ paths:
       responses:
         "201":
           description: "Successfully created person"
-  /people/{lname}:
+  /people/{person_id}:
     get:
       operationId: "people.read_one"
       tags:
         - People
       summary: "Read one person"
       parameters:
-        - $ref: "#/components/parameters/lname"
+        - $ref: "#/components/parameters/person_id"
       responses:
         "200":
           description: "Successfully read person"
@@ -77,7 +77,7 @@ paths:
       operationId: "people.update"
       summary: "Update a person"
       parameters:
-        - $ref: "#/components/parameters/lname"
+        - $ref: "#/components/parameters/person_id"
       responses:
         "200":
           description: "Successfully updated person"
@@ -93,7 +93,7 @@ paths:
       operationId: "people.delete"
       summary: "Delete a person"
       parameters:
-        - $ref: "#/components/parameters/lname"
+        - $ref: "#/components/parameters/person_id"
       responses:
         "204":
           description: "Successfully deleted person"
@@ -113,7 +113,7 @@ paths:
                 type: "object"
                 properties:
                   person_id:
-                    type: "integer"
+                    type: "string"
                   content:
                     type: "string"
       responses:
